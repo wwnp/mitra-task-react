@@ -12,6 +12,7 @@ export const MainPage = () => {
   const loading = useSelector(state => state?.mainpage?.loading)
   const data = useSelector(state => state?.mainpage.data)
   const category = useSelector(state => state?.mainpage.category)
+  const error = useSelector(state => state?.errors.errorImgs)
 
   const from = ruleCat[category][0]
   const to = ruleCat[category][1]
@@ -50,7 +51,7 @@ export const MainPage = () => {
       {
         loading
           ? <Loader></Loader>
-          : <List data={out}></List>
+          : <List data={out} error={error}></List>
       }
     </Container>
   )

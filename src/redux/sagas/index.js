@@ -23,13 +23,14 @@ async function getImgs() {
 
 function* fetchImgs() {
   try {
+    console.log(123)
     yield put({ type: START_LOADING })
     const result = yield call(getImgs);
 
     yield put({ type: SET_DATA, payload: result })
   }
   catch (error) {
-    yield put({ type: SET_ERROR_IMGS, payload: "Error loading imgs " })
+    yield put({ type: SET_ERROR_IMGS, payload: "Error loading imgs" })
   }
   finally {
     yield put({ type: END_LOADING })
@@ -47,7 +48,8 @@ export function* menuFn({ payload }) {
 
 export function* watchSaga() {
   const path = yield select(({ router }) => router.location.pathname);
-  if (path === '/') {
+  if (path === '/mitra-task-react/') {
+    console.log(12313213)
     if (localStorage.getItem('data')) {
       yield call(fromLS);
     } else {

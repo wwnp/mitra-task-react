@@ -27,7 +27,7 @@ export const Drawer = props => {
           <li>
             <NavLink
               exact
-              to='/'
+              to='/mitra-task-react'
               activeClassName="active-side"
               className='side-a mt-2'
               onClick={() => dispatch({ type: SET_MENU_SAGA, payload: !menu })}
@@ -38,7 +38,7 @@ export const Drawer = props => {
           <li className='border bottom '>
             <NavLink
               exact
-              to='/about'
+              to='/mitra-task-react/about'
               activeClassName="active-side"
               onClick={() => dispatch({ type: SET_MENU_SAGA, payload: !menu })}
               className='side-a'

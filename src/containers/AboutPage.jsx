@@ -1,5 +1,5 @@
 import React from 'react'
-import { Badge, Button, Card, Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import avatar from '../assets/GITHUB.jpg'
@@ -15,7 +15,6 @@ export const AboutPage = () => {
           <img src={avatar} alt="avatar" width={'350px'} />
         </Col>
         <Col xs={12} md={8}>
-
           <h2 className='text-center pb-3 border-bottom border-secondary'>Гилёв Сергей Александрович</h2>
           <h5 className='pt-2 text-center'>Контакты:</h5>
           <div className='AboutPage__flex '>
@@ -64,13 +63,11 @@ export const AboutPage = () => {
             <div className="AboutPage__BadgeContainer">
               {
                 stackTech.map((tech, index) => {
-                  // const randomColorIndex = generateRandNum(colorsBadge)]
                   return (
                     <MyBadge
                       key={index + generateRandNum(0, 1000)}
                       color={colorsBadge[generateRandNum(0, colorsBadge.length - 1)]}
                       text={tech}
-
                     >
                     </MyBadge>
                   )

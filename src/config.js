@@ -1,5 +1,6 @@
 export const LIMIT_IMGS = 24
-export const API_URL = `https://api.unsplash.com/photos/random?client_id=01U6O5_KgVoPpWaakeorMM2qjlht6cvRc8gG5HL6Hrk&count=${LIMIT_IMGS}`
+const API_KEY = process.env.REACT_APP_API_KEY
+export const API_URL = `https://api.unsplash.com/photos/random?client_id=${API_KEY}&count=${LIMIT_IMGS}`
 // export const API_URL = 'https://jsonplaceholder.typicode.com/photos' + '?_limit=' + LIMIT_IMGS
 export const ruleCat = {
   1: [0, 5],
@@ -13,7 +14,6 @@ export const colorsBadge = [
   'success',
   'warning',
   'info',
-  // 'light',
   'dark',
 ]
 export const stackTech = [

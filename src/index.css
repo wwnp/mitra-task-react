@@ -104,8 +104,6 @@ code {
   transition: visibility 0.15s linear, opacity 0.15s linear;
 }
 
-
-
 .card:hover .card-img-overlay {
   visibility: visible;
   opacity: 1;
@@ -134,4 +132,8 @@ code {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   row-gap: 1rem;
+}
+
+.pointer {
+  cursor: pointer;
 }

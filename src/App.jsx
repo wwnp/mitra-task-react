@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Burger } from './components/Burger';
 import { Drawer } from './components/Drawer';
 import { SET_MENU_SAGA } from "./redux/constants";
+import { Link } from 'react-router-dom';
 
 function App({ children }) {
   const menu = useSelector(state => state?.mainpage.menu)
@@ -11,7 +12,7 @@ function App({ children }) {
     <div className="App">
       <Navbar bg="light">
         <Container>
-          <Navbar.Brand href="#home">Mitra Gallery</Navbar.Brand>
+          <Link className="navbar-brand" to='/mitra-task-react'>Mitra Gallery</Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">

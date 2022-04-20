@@ -6,7 +6,8 @@ export const MyBadge = ({ color = 'primary', text = '___' }) => {
     <Badge
       bg={color}
       className='mx-1 p-2'
-
-    >{text}</Badge>
+    >
+      {text}
+    </Badge>
   )
 }

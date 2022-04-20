@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './helpers.css'
 import './index.css'
 import './style.loader.css'
 import ReactDOM from 'react-dom';
@@ -15,16 +14,16 @@ import App from './App';
 
 ReactDOM.render(
   <Provider store={store}>
-    <ConnectedRouter history={history}>
+    <ConnectedRouter history={history} basename="/mitra-task-react/">
       <App>
         <Switch>
-          <Route path='/' exact>
+          <Route path='/mitra-task-react' exact>
             <MainPage />
           </Route>
-          <Route path='/about' exact>
+          <Route path='/mitra-task-react/about' exact>
             <AboutPage />
           </Route>
-          <Route path='/photos/:id' exact>
+          <Route path='/mitra-task-react/photos/:id' exact>
             <MorePage />
           </Route>
         </Switch>
