@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/mitra-task-react/static/css/main.0c763b7e.css",
-    "main.js": "/mitra-task-react/static/js/main.e6d6d77d.js",
+    "main.js": "/mitra-task-react/static/js/main.c217b7c9.js",
     "static/media/GITHUB.jpg": "/mitra-task-react/static/media/GITHUB.caa68a42ffce77fa8883.jpg",
     "index.html": "/mitra-task-react/index.html",
     "main.0c763b7e.css.map": "/mitra-task-react/static/css/main.0c763b7e.css.map",
-    "main.e6d6d77d.js.map": "/mitra-task-react/static/js/main.e6d6d77d.js.map"
+    "main.c217b7c9.js.map": "/mitra-task-react/static/js/main.c217b7c9.js.map"
   },
   "entrypoints": [
     "static/css/main.0c763b7e.css",
-    "static/js/main.e6d6d77d.js"
+    "static/js/main.c217b7c9.js"
   ]
 }
