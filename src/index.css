@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +11,116 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(circle at center, #131313, #1d1d1f);
+  color: #fff;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* body[data-theme='dark'] {
+  --colors-text: #ffffff;
+  --colors-bg: #ffffff;
+}
+
+body[data-theme='light'] {
+  --colors-text: #000000;
+  --colors-bg: #000000;
+}
+
+body {
+  color: var(--colors-text);
+  background-color: var(--colors-bg);
+} */
+.App {
+  position: relative;
+}
+
+.Drawer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 80%;
+  max-width: 250px;
+  /* padding: 20px 10px; */
+  box-sizing: border-box;
+  /* background-color: var(--colors-section-even); */
+  /* color: var(--colors-text); */
+  transform: translateX(0px);
+  transition: transform .22s ease-in;
+  z-index: 999999999999;
+  background: rgba(235, 235, 235, 0.9);
+}
+
+.side-a {
+  padding: 10px;
+  color: #0f0f0f;
+  font-size: 1rem;
+  text-decoration: none;
+  background-color: var(--colors-bg2);
+  border-right: none;
+  width: 100%;
+  display: block;
+
+  text-transform: uppercase;
+}
+
+.side-a:hover {
+  border-right: 5px solid rgb(51, 51, 51);
+  color: rgb(22, 22, 22);
+}
+
+.active-side {
+  background-color: #131313;
+  color: #fff;
+}
+
+.active-side:hover {
+  background-color: #0f0f0f;
+  color: rgb(255, 255, 255);
+}
+
+.Drawer.close {
+  /* transform: translateX(-300px); */
+  transform: translateX(-300px);
+}
+
+.Drawer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.Backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+
+
+.parent {
+  border: 1px solid #ff0000;
+}
+
+.card .card-img-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.15s linear, opacity 0.15s linear;
+}
+
+.card:hover .card-img-overlay {
+  visibility: visible;
+  opacity: 1;
 }
