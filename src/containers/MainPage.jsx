@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { List } from '../components/List';
 import { Row } from 'react-bootstrap';
 import { ruleCat } from '../config';
-import { SET_CATEGORY_SAGA } from './../redux/constants';
+import { SET_CATEGORY_SAGA, SET_DATA_SAGA } from './../redux/constants';
 import Loader from '../components/Loader';
 
 export const MainPage = () => {
@@ -28,7 +28,7 @@ export const MainPage = () => {
             1 Категория
           </Button>
           <Button
-            variant="danger"
+            variant="info"
             onClick={() => dispatch({ type: SET_CATEGORY_SAGA, payload: 2 })}
           >
             2 Категория
@@ -46,8 +46,20 @@ export const MainPage = () => {
             4 Категория
           </Button>
         </ButtonGroup>
-
       </Row>
+      <div className=' mt-4 text-center'>
+        <Button
+          className='mx-auto btn-lg'
+          variant="danger"
+          onClick={() => {
+            localStorage.removeItem("data")
+            dispatch({ type: SET_DATA_SAGA })
+
+          }}
+        >
+          Новые картинки
+        </Button>
+      </div>
       {
         loading
           ? <Loader></Loader>

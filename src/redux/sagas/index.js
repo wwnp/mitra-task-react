@@ -1,10 +1,25 @@
 import { LOCATION_CHANGE } from 'connected-react-router';
 import { takeEvery, put, select, call, takeLatest } from 'redux-saga/effects';
-import { END_LOADING, SET_DATA, SET_MENU, SET_MENU_SAGA, START_LOADING, SET_CATEGORY_SAGA, SET_CATEGORY } from '../constants';
+import { END_LOADING, SET_DATA, SET_MENU, SET_MENU_SAGA, START_LOADING, SET_CATEGORY_SAGA, SET_CATEGORY, SET_DATA_SAGA } from '../constants';
 import { SET_ERROR_IMGS } from './../constants';
 import axios from 'axios';
 import { delay } from './../../auxiliary';
 import { API_URL } from '../../config'
+
+export function* resetFn() {
+  try {
+    yield put({ type: START_LOADING })
+    const result = yield call(getImgs);
+
+    yield put({ type: SET_DATA, payload: result })
+  }
+  catch (error) {
+    yield put({ type: SET_ERROR_IMGS, payload: "Error loading imgs" })
+  }
+  finally {
+    yield put({ type: END_LOADING })
+  }
+}
 
 export function* categoryFn({ payload }) {
   yield put({ type: SET_CATEGORY, payload })
@@ -23,7 +38,6 @@ async function getImgs() {
 
 function* fetchImgs() {
   try {
-    console.log(123)
     yield put({ type: START_LOADING })
     const result = yield call(getImgs);
 
@@ -63,4 +77,5 @@ export default function* rootSaga() {
   yield takeLatest(LOCATION_CHANGE, watchSaga);
   yield takeEvery(SET_MENU_SAGA, menuFn)
   yield takeEvery(SET_CATEGORY_SAGA, categoryFn)
+  yield takeEvery(SET_DATA_SAGA, resetFn)
 }

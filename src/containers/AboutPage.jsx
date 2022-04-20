@@ -1,13 +1,15 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Button, Container } from 'react-bootstrap'
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import avatar from '../assets/GITHUB.jpg'
 import { generateRandNum } from '../auxiliary';
 import { MyBadge } from '../components/MyBadge';
 import { colorsBadge, stackTech } from '../config';
+import { useHistory } from 'react-router-dom';
 
 export const AboutPage = () => {
+  let history = useHistory();
   return (
     <Container>
       <Row className='mt-3 bg-white text-dark p-2 rounded mb-0' >
@@ -20,40 +22,67 @@ export const AboutPage = () => {
           <div className='AboutPage__flex '>
             <div className='AboutPage__address'>
               <address>
-                <a className='AboutPage__link btn btn-outline-secondary text-dark ' href="tel:+79181908996"> +7 (918) 190 89 96</a>
-              </address>
-            </div>
-            <div className='AboutPage__address'>
-              <address>
-
                 <a
-                  className='AboutPage__link btn btn-outline-primary text-dark '
-                  href="mailto: serhiogilev@gmail.com"
-                  type='email'
-                  onClick={(e) => { e.preventDefault() }}
-                >
-                  serhiogilev@gmail.com
+                  className='AboutPage__link btn btn-outline-secondary text-dark'
+                  href="tel:+79181908996"
+                >+7 (918) 190 89 96
                 </a>
               </address>
             </div>
             <div className='AboutPage__address'>
               <address>
-                <a className='AboutPage__link btn btn-outline-warning text-dark' href="https://github.com/wwnp">GitHub</a>
+                <a
+                  target={'_blank'} rel="noreferrer"
+                  className='AboutPage__link btn btn-outline-primary text-dark '
+                  href="mailto: serhiogilev@gmail.com"
+                  type='email'
+                  onClick={(e) => { e.preventDefault() }}
+                >serhiogilev@gmail.com
+                </a>
               </address>
             </div>
             <div className='AboutPage__address'>
               <address>
-                <a className='AboutPage__link btn btn-outline-info text-dark' href="https://t.me/wwnp0">Telegram</a>
+                <a
+                  className='AboutPage__link btn btn-outline-warning text-dark'
+                  href="https://github.com/wwnp"
+                  target={'_blank'}
+                  rel="noreferrer"
+                >GitHub
+                </a>
               </address>
             </div>
             <div className='AboutPage__address'>
               <address>
-                <a className='AboutPage__link btn btn-outline-success text-dark' href="https://wa.me/79181908996">WhatsUp</a>
+                <a
+                  className='AboutPage__link btn btn-outline-info text-dark'
+                  href="https://t.me/wwnp0"
+                  target={'_blank'}
+                  rel="noreferrer"
+                >Telegram
+                </a>
               </address>
             </div>
             <div className='AboutPage__address'>
               <address>
-                <a className='AboutPage__link btn btn-outline-danger text-dark' href="https://krasnodar.hh.ru/resume/e958213aff09d3ce9a0039ed1f724654675655">HeadHunter</a>
+                <a
+                  className='AboutPage__link btn btn-outline-success text-dark'
+                  href="https://wa.me/79181908996"
+                  target={'_blank'}
+                  rel="noreferrer"
+                >WhatsUp
+                </a>
+              </address>
+            </div>
+            <div className='AboutPage__address'>
+              <address>
+                <a
+                  className='AboutPage__link btn btn-outline-danger text-dark'
+                  href="https://krasnodar.hh.ru/resume/e958213aff09d3ce9a0039ed1f724654675655"
+                  target={'_blank'}
+                  rel="noreferrer"
+                >HeadHunter
+                </a>
               </address>
             </div>
 
@@ -74,6 +103,15 @@ export const AboutPage = () => {
                 })
               }
             </div>
+          </div>
+          <hr />
+          <div className='d-flex justify-content-end'>
+            <Button
+              variant='danger' className='float-right'
+              onClick={() => history.push('/mitra-task-react/')}
+            >
+              Назад
+            </Button>
           </div>
         </Col>
       </Row>
