@@ -23,7 +23,7 @@ ReactDOM.render(
           <Route path='/about' exact>
             <AboutPage />
           </Route>
-          <Route path='/more' exact>
+          <Route path='/photos/:id' exact>
             <MorePage />
           </Route>
         </Switch>

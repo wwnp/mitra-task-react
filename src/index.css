@@ -20,20 +20,6 @@ code {
     monospace;
 }
 
-/* body[data-theme='dark'] {
-  --colors-text: #ffffff;
-  --colors-bg: #ffffff;
-}
-
-body[data-theme='light'] {
-  --colors-text: #000000;
-  --colors-bg: #000000;
-}
-
-body {
-  color: var(--colors-text);
-  background-color: var(--colors-bg);
-} */
 .App {
   position: relative;
 }
@@ -106,10 +92,6 @@ body {
 }
 
 
-
-.parent {
-  border: 1px solid #ff0000;
-}
 
 .card .card-img-overlay {
   display: flex;

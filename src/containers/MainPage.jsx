@@ -1,23 +1,44 @@
 import React from 'react'
-import { Card, Container, Row } from 'react-bootstrap'
-import { Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, ButtonGroup, Container } from 'react-bootstrap'
+import { useSelector } from 'react-redux';
+import { List } from '../components/List';
+import { Row } from 'react-bootstrap';
 
 export const MainPage = () => {
+  const loading = useSelector(state => state?.mainpage?.loading)
+  const data = useSelector(state => state?.mainpage.data)
   return (
     <Container>
-      <Row className='mt-2 justify-content-center'>
-        <Col xs={12} md={4}>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/220px-Image_created_with_a_mobile_phone.png" />
-            <Card.ImgOverlay>
-              <Card.Title>
-                <Link className='btn btn-success' to='/test'>Подробнее</Link>
-              </Card.Title>
-            </Card.ImgOverlay>
-          </Card>
-        </Col>
+      <Row className='mt-3'>
+        <ButtonGroup aria-label="Basic example">
+          <Button
+            variant="success"
+          >
+            1 Категория
+          </Button>
+          <Button
+            variant="danger"
+          >
+            2 Категория
+          </Button>
+          <Button
+            variant="primary"
+          >
+            3 Категория
+          </Button>
+          <Button
+            variant="warning"
+          >
+            4 Категория
+          </Button>
+        </ButtonGroup>
+
       </Row>
+      {
+        loading
+          ? <h1>Loading...</h1>
+          : <List data={data}></List>
+      }
     </Container>
   )
 }
