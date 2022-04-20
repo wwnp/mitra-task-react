@@ -31,7 +31,7 @@ export const Drawer = props => {
               className='side-a mt-2'
               onClick={() => dispatch({ type: SET_MENU_SAGA, payload: !menu })}
             >
-              Main Page
+              Галерея
             </NavLink>
           </li>
           <li>
@@ -42,7 +42,7 @@ export const Drawer = props => {
               onClick={() => dispatch({ type: SET_MENU_SAGA, payload: !menu })}
               className='side-a'
             >
-              About Me
+              Обо мне
             </NavLink>
           </li>
         </ul>

@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './helpers.css'
 import './index.css'
+import './style.loader.css'
 import ReactDOM from 'react-dom';
 import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'connected-react-router';

@@ -9,7 +9,7 @@ export const ListItem = ({ url, id }) => {
         <Card.Img variant="top" src={url} className={'masonry-img'} width={250} height={550} />
         <Card.ImgOverlay>
           <Card.Title>
-            <Link className='btn btn-success btn-lg' to={`/photos/${id}`}>Подробнее</Link>
+            <Link className='btn btn-dark btn-lg' to={`/photos/${id}`}>Подробнее</Link>
           </Card.Title>
         </Card.ImgOverlay>
       </Card>

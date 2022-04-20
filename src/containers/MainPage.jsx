@@ -5,6 +5,7 @@ import { List } from '../components/List';
 import { Row } from 'react-bootstrap';
 import { ruleCat } from '../config';
 import { SET_CATEGORY_SAGA } from './../redux/constants';
+import Loader from '../components/Loader';
 
 export const MainPage = () => {
   const dispatch = useDispatch()
@@ -15,7 +16,6 @@ export const MainPage = () => {
   const from = ruleCat[category][0]
   const to = ruleCat[category][1]
   const out = data.slice(from, to + 1)
-  console.log(out)
   return (
     <Container>
       <Row className='mt-3'>
@@ -49,7 +49,7 @@ export const MainPage = () => {
       </Row>
       {
         loading
-          ? <h1>Loading...</h1>
+          ? <Loader></Loader>
           : <List data={out}></List>
       }
     </Container>
