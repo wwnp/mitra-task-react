@@ -63,7 +63,6 @@ export function* menuFn({ payload }) {
 export function* watchSaga() {
   const path = yield select(({ router }) => router.location.pathname);
   if (path === '/mitra-task-react/') {
-    console.log(12313213)
     if (localStorage.getItem('data')) {
       yield call(fromLS);
     } else {
