@@ -2,7 +2,7 @@ import { END_LOADING, SET_CATEGORY, SET_DATA, SET_MENU, START_LOADING } from "..
 
 const initialState = {
   menu: false,
-  data: [],
+  data: JSON.parse(localStorage.getItem('data')) || [],
   category: 1,
   loading: false
 };

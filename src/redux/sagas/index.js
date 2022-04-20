@@ -15,13 +15,17 @@ async function getImgs() {
   return axios({
     method: 'get',
     url: API_URL
-  }).then(resp => resp.data);
+  }).then(resp => {
+    localStorage.setItem("data", JSON.stringify(resp.data))
+    return resp.data
+  });
 }
 
 function* fetchImgs() {
   try {
     yield put({ type: START_LOADING })
     const result = yield call(getImgs);
+
     yield put({ type: SET_DATA, payload: result })
   }
   catch (error) {
@@ -32,6 +36,11 @@ function* fetchImgs() {
   }
 }
 
+function* fromLS() {
+  const data = JSON.parse(localStorage.getItem('data'))
+  yield put({ type: SET_DATA, payload: data })
+}
+
 export function* menuFn({ payload }) {
   yield put({ type: SET_MENU, payload })
 }
@@ -39,7 +48,12 @@ export function* menuFn({ payload }) {
 export function* watchSaga() {
   const path = yield select(({ router }) => router.location.pathname);
   if (path === '/') {
-    yield call(fetchImgs);
+    if (localStorage.getItem('data')) {
+      yield call(fromLS);
+    } else {
+      yield call(fetchImgs);
+    }
+
   }
 }
 
