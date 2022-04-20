@@ -8,3 +8,24 @@ export const ruleCat = {
   4: [18, 23],
 }
 
+export const colorsBadge = [
+  'primary',
+  'success',
+  'warning',
+  'info',
+  // 'light',
+  'dark',
+]
+export const stackTech = [
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'React',
+  'Redux',
+  'Redux-Saga',
+  'MySQL',
+  'GIT',
+  'TypeScript',
+  'Webpack',
+  'English B1 Intermediate',
+]

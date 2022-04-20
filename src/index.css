@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -39,7 +44,7 @@ code {
   transform: translateX(0px);
   transition: transform .22s ease-in;
   z-index: 999999999999;
-  background: rgba(235, 235, 235, 0.9);
+  background: rgba(235, 235, 235, 0.97);
 }
 
 .side-a {
@@ -82,11 +87,11 @@ code {
   width: 100%;
 }
 
-.card img {
+.card-list-item img {
   transition: filter .25s linear;
 }
 
-.card:hover img {
+.card-list-item:hover img {
   filter: blur(5px);
 }
 
@@ -97,11 +102,36 @@ code {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.15s linear, opacity 0.15s linear;
-
 }
+
+
 
 .card:hover .card-img-overlay {
   visibility: visible;
   opacity: 1;
 
+}
+
+.AboutPage__link {
+  width: 200px;
+}
+
+.AboutPage__flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.AboutPage__address {
+  flex: 1 1 50%;
+  /*Start Run Code Snippet output CSS*/
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  /*End Run Code Snippet output CSS*/
+}
+
+.AboutPage__BadgeContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 1rem;
 }

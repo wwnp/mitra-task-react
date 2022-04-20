@@ -3,3 +3,6 @@ export const delay = (ms) => {
     setTimeout(resolve, ms);
   })
 }
+export function generateRandNum(min, max) {
+  return Math.floor(min + Math.random() * (max - min + 1))
+}
